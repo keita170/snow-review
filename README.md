@@ -1,9 +1,7 @@
-# README
+# 前回作成した「Meet snow」の振り返り学習の為に作ったアプリです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+動作確認や流れのおさらいなどを中心としてます。
+また、qiitaに投稿する為に、流れを理解するために作成しました。
 
 * Ruby version
 
