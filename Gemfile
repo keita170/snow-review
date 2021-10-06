@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'devise'
+#Active storageを使用する為のgem
+gem 'image_processing', '~> 1.2'

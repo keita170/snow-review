@@ -1,1 +1,11 @@
-<h1>ユーザー詳細ページです</h1>
+<h2>User info</h2>
+<!--ActiveStorageを用いて-->
+<% if @user.image.attached? %>
+  <%= image_tag @user.image.variant(resize:'200x200'), class:"rounded-circle" %>
+<% else %>
+  <%= image_tag 'no_image.jpg', class:"rounded-circle" %>
+<% end %>
+
+<%= @user.name %>
+<%= @user.introduction %>
+<%= @user.status %>
