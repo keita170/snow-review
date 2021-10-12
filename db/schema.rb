@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_071843) do
   end
 
   create_table "student_posts", force: :cascade do |t|
+    t.string "user_id"
     t.string "title"
     t.text "body"
     t.integer "field"
