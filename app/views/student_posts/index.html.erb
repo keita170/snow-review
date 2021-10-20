@@ -1,10 +1,26 @@
-<% @student_posts.each do |student| %>]
-<h4>タイトル</h4>
-<%= student.title %>
-<h4>内容</h4>
-<%= student.body %>
-<h4>分野</h4>
-<%= student.field %>
-<h4>ステータス</h4>
-<%= student.status %>
-<% end %>
+<div class="col-10 offset-2 mt-2 mb-2">
+  <h3 class="">投稿一覧(<%= link_to "投稿ページへ", new_student_post_path %>)</h3>
+</div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+        <div class="card" style="width: 18rem;">
+          <% @student_posts.each do |student| %>
+          <div class="card-header">
+            <%= link_to student_post_path(student) do %>
+              投稿No.<%= student.id %>
+            <% end %>
+          </div>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">タイトル : <%= student.title %></li>
+            <li class="list-group-item">内容 : <%= student.body %></li>
+            <li class="list-group-item">分野 : <%= student.field %></li>
+            <li class="list-group-item">ステータス : <%= student.status %></li>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+
