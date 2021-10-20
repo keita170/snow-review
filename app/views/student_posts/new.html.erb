@@ -1,18 +1,24 @@
-<%= form_with model:@student_post, local: true do |f| %>
-
-<h4>タイトル</h4>
-<%= f.text_field :title %>
-
-<h4>内容</h4>
-<%= f.text_area :body %>
-
-<h4>分野</h4>
-<%= f.select :field, [["選択肢1", "選択肢1"],["選択肢2", "選択肢2"]], include_blank: "選択して下さい" %>
-
-<h4>ステータス</h4>
-<%= f.radio_button :status, :受付中,  checked: "checked" %>
-<%= f.label :status, "受付中" %>
-
-<%= f.submit "新規投稿する" %>
-
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    <%= form_with model:@student_post, local: true do |f| %>
+    
+    <h4>タイトル</h4>
+    <%= f.text_field :title %>
+    
+    <h4>内容</h4>
+    <%= f.text_area :body %>
+    
+    <h4>分野</h4>
+    <%= f.select :field, [["選択肢1", "選択肢1"],["選択肢2", "選択肢2"]], include_blank: "選択して下さい" %>
+    
+    <h4>ステータス</h4>
+    <%= f.radio_button :status, :受付中,  checked: "checked" %>
+    <%= f.label :status, "受付中" %>
+    
+    <%= f.submit "新規投稿する" %>
+    
+    <% end %>
+    </div>
+  </div>
+</div>
