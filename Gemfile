@@ -65,3 +65,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 #Active storageを使用する為のgem
 gem 'image_processing', '~> 1.2'
+
+#bootstrapを利用できるようにする
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+#font awesomeも使えるようにする
+gem 'font-awesome-sass', '~> 5.13'
