@@ -1,13 +1,20 @@
-<h2>User info</h2>
-<!--ActiveStorageを用いて-->
-<% if @user.image.attached? %>
-  <%= image_tag @user.image.variant(resize:'200x200'), class:"rounded-circle" %>
-<% else %>
-  <%= image_tag 'no_image.jpg', class:"rounded-circle" %>
-<% end %>
+<h2>マイページ</h2>
 
-<%= @user.name %>
-<%= @user.introduction %>
-<%= @user.status %>
-
-<%= link_to '編集する', edit_user_path(@user) %>
+<div class="container">
+  <div class="row">
+    <div class="col-2 bg-secondary pl-5">
+      <!--ActiveStorageを用いて-->
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image.variant(resize:'200x200'), class:"rounded-circle" %>
+      <% else %>
+        <%= image_tag 'no_image.jpg', class:"rounded-circle" %>
+      <% end %>
+    </div>
+    <div class="col-10 bg-secondary">
+      <div>名前 : <%= @user.name %></div>
+      <div>自己紹介 : <%= @user.introduction %></div>
+      <div>ステータタス : <%= @user.status %></div>
+      <div><%= link_to '編集する', edit_user_path(@user) %></div>
+    </div>
+  </div>
+</div>
