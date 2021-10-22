@@ -7,7 +7,7 @@ class CreateStudentPosts < ActiveRecord::Migration[5.2]
       t.text :body#投稿の本文
       t.integer :field#投稿の分野
       t.integer :status#投稿のステータス(状況)
-
+      
       t.timestamps
     end
   end
