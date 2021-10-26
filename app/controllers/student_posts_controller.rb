@@ -5,6 +5,7 @@ class StudentPostsController < ApplicationController
 
   def show
     @student_post = StudentPost.find(params[:id])
+    @student_comment = StudentComment.new
   end
 
   def new

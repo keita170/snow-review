@@ -1,5 +1,6 @@
 class StudentPost < ApplicationRecord
   belongs_to :user
+  has_many :student_comments, dependent: :destroy
   
   #enumを用いて数字で扱えるようにする
   enum field: { 選択肢１: 0, 選択肢２: 1 }

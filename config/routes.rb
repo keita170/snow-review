@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
   resources :users, only: [:show, :edit, :update]
-  
-  resources :student_posts, only: [:index, :show, :new, :create]
+
+  resources :student_posts, only: [:index, :show, :new, :create] do
+    resources :student_comments, only: [:create, :destroy]
+  end
+
 end

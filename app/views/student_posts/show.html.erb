@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
       <div class="col-12">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 20rem;">
           <div class="card-header">
               投稿No.<%= @student_post.id %>
           </div>
@@ -14,6 +14,22 @@
             <li class="list-group-item">内容 : <%= @student_post.body %></li>
             <li class="list-group-item">分野 : <%= @student_post.field %></li>
             <li class="list-group-item">ステータス : <%= @student_post.status %></li>
+            <div class="mt-2 ml-2">
+              <% @student_post.student_comments.each do |comment| %>
+                <%= comment.user.name %>：
+                <%= comment.comment %>
+                <% if comment.user == current_user %>
+                  <%= link_to "削除",student_post_student_comment_path(comment.student_post, comment), method: :delete %>
+                <% end %>
+                <br>
+              <% end %>
+            </div>
+            <div class="mt-2">
+              <%= form_with(model:[@student_post, @student_comment], local: true) do |f| %>
+                <%= f.text_area :comment,placeholder: "コメントをここに" %>
+                <%= f.submit "送信する" %>
+              <% end %>
+            </div>
           </ul>
         </div>
       </div>
