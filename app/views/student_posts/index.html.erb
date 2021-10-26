@@ -5,8 +5,8 @@
 <div class="container">
   <div class="row">
       <div class="col-12">
-        <div class="card" style="width: 18rem;">
-          <% @student_posts.each do |student| %>
+        <% @student_posts.each do |student| %>
+        <div class="card mb-3" style="width: 18rem;">
           <div class="card-header">
             <%= link_to student_post_path(student) do %>
               投稿No.<%= student.id %>
@@ -17,9 +17,10 @@
             <li class="list-group-item">内容 : <%= student.body %></li>
             <li class="list-group-item">分野 : <%= student.field %></li>
             <li class="list-group-item">ステータス : <%= student.status %></li>
+            <li class="list-group-item">コメント件数 : <%= student.student_comments.count %></li>
           </ul>
-          <% end %>
         </div>
+        <% end %>
       </div>
   </div>
 </div>

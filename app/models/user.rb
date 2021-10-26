@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one_attached :image
 
   has_many :student_posts, dependent: :destroy
+  has_many :student_comments, dependent: :destroy
 
   private
 
