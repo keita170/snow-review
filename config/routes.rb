@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
 
   resources :student_posts, only: [:index, :show, :new, :create] do
+    resource :favorites, only: [:create, :destroy]
     resources :student_comments, only: [:create, :destroy]
   end
 

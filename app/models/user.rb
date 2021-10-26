@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :student_posts, dependent: :destroy
   has_many :student_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   private
 

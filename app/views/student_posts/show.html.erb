@@ -13,7 +13,18 @@
               <li class="list-group-item">タイトル : <%= @student_post.title %></li>
             <li class="list-group-item">内容 : <%= @student_post.body %></li>
             <li class="list-group-item">分野 : <%= @student_post.field %></li>
-            <li class="list-group-item">ステータス : <%= @student_post.status %></li>
+            <li class="list-group-item">
+              ステータス : <%= @student_post.status %>
+              <% if @student_post.favorited_by?(current_user) %>
+                <%= link_to student_post_favorites_path(@student_post), method: :delete do %>
+                ♥
+                <% end %>
+              <% else %>
+                <%= link_to student_post_favorites_path(@student_post), method: :post do %>
+                ♡
+                <% end %>
+              <% end %>
+            </li>
             <div class="mt-2 ml-2">
               <% @student_post.student_comments.each do |comment| %>
                 <%= comment.user.name %>：
