@@ -4,7 +4,6 @@ class CreateStudentComments < ActiveRecord::Migration[5.2]
       
       t.integer :user_id
       t.integer :student_post_id
-      
       t.text :comment
       
       t.timestamps
