@@ -11,6 +11,11 @@
             <%= link_to student_post_path(student) do %>
               投稿No.<%= student.id %>
             <% end %>
+            <% if student.user == current_user %>
+              <%= link_to "編集する",class:"btn btn-outline-secondary btn-sm ml-2" %>
+            <% else %>
+              <%= link_to "連絡を取る", user_path(student.user) ,class:"btn btn-secondary btn-sm ml-2" %>
+            <% end %>
           </div>
           <ul class="list-group list-group-flush">
               <li class="list-group-item">タイトル : <%= student.title %></li>
