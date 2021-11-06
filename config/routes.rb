@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings'
     get 'followers' => 'relationships#followers'
   end
+  
+  resources :messages, only: [:create, :show]
 
   resources :student_posts, only: [:index, :show, :new, :create] do
     resource :favorites, only: [:create, :destroy]
