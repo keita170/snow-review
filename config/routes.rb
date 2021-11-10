@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create, :show]
 
   resources :student_posts, only: [:index, :show, :new, :create] do
+    #resourceにする事で、/:idが付かなくなる
     resource :favorites, only: [:create, :destroy]
     resources :student_comments, only: [:create, :destroy]
   end

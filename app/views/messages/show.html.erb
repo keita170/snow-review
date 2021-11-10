@@ -2,6 +2,7 @@
 
 <div class="message ml-5" style="width: 400px;">
   <% @messages.each do |message| %>
+  <!--相手の文字を左側、自分の文字を右側に出てくるように指定-->
   <% if message.user.id == current_user.id %>
    <p style="text-align: right"><%= message.message %></p>
   <% else %>
