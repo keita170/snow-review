@@ -1,6 +1,12 @@
 class StudentPostsController < ApplicationController
   def index
     @student_posts = StudentPost.all
+    
+    if params[:sort] == 'status'
+      @student_posts = StudentPost.all
+    elsif params[:sort] == 'status-reverse'
+      @student_posts = StudentPost.all.order('status DESC')
+    end
   end
 
   def show
