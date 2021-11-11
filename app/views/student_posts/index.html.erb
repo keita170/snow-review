@@ -2,6 +2,11 @@
   <h3 class="">投稿一覧(<%= link_to "投稿ページへ", new_student_post_path %>)</h3>
 </div>
 
+<div>
+  <%= link_to "受付中", student_posts_path(sort:'status'), class:"btn btn-sm btn-outline-dark mr-1" %>
+  <%= link_to "締め切り", student_posts_path(sort:'status-reverse'), class:"btn btn-sm btn-outline-dark mr-1" %>
+</div>
+
 <div class="container">
   <div class="row">
       <div class="col-12">
